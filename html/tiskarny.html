@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tiskárny</title>
+</head>
+<body bgcolor="#F6F6F6">
+<table align="center">
+<tr>
+	<td width="100px">
+	</td>
+	<td>
+		<font face="Arial" size="3">
+		<font size="5" align="left"><b id="backtotop" name="backtopop">FFF tiskárny</b></font>
+		<p>
+		&nbsp&nbsp&nbsp&nbspTyto tiskárny patří mezi nejrozšířenější a spočívají v nanášení roztaveného filametu (roztaveného plastu) v jednotlivých vrstvách. Je to nejrozšířenější typ tiskáren. Rámy těchto tiskáren mohou mít různé konstrukce. Princip je však stejný. Tiskárna se hýbe v souřadnicích XYZ a filament zanáší do bodů z daných gcode souborů. Velikost tiskové plochy se pohybuje od 180mm do 300mm.
+		<hr />
+		<font size="5" align="left"><b>Popis FFF tiskárny</b></font>
+		<center>
+		<img src="../images/popisfff.png" alt="popisFFFtiskarny" width="800px" />
+		</center>
+		<b>Extruder</b><br />
+		Zajišťuje posouvání filamentu do trysky, ze které je poté za tiskových teplot vytlačován.<br />
+		<br />
+		<b>Bowden Tube (Bowdenová trubička)</b><br />Touto trubičkou filament prochází do hotendu (tavící hlava), při řešení direct drive není trubička třeba. Motor je umístěn v těsné blízkosti hlavy.<br />
+		<br />
+		<b>Hotend Assembly (Tisková hlava)</b><br />Jedná se o sestavený celek. Jeho cílem je tavit filament a chladit vytištěný díl. Je zakončený tryskou, která je výměnná a umožňuje použítí různých průměrů pro tisky různých velikostí. Standardní tryska má 0,4mm. Je možné se setkat i s menšími či většími dle potřeby pro daný tisk.<br />
+		<br />
+		<b>Power Supply (Napájecí zdroj)</b><br />Slouží k napájení celé tiskárny. Mění střídavé napětí na stejnosměrné. Výstup je 12 nebo 24V. Vyšší napětí se používá v modernějších tiskárnách. Výkon se pohybuje okolo 350 wattů.<br />
+		<br />
+		<b>Endstop Switches (Koncové spínače)</b><br />Využívají se k takzvanému homeování tiskárny. Tiskárna při začátku tisku potřebuje vědět, kde je v kartészké soustavě nula. Díky
+		těmto spínačům si je určí. Jsou i tiskárny, které je nemají. Tam kalibraci obstarávají ovladače krokových motorů, které se zkalibrují pomocí nárazů do konstrukce tiskárny.<br />
+		<br />
+		<b>Bed Leveling Screws (Šrouby pro vyrovnání podložky)</b><br />Tyto šrouby se používají k dorovnání tiskové podložky, aby byla v rovině. Je tak třeba činit, aby se filament neodlepoval od tiskové podložky. Některé tiskárny tyto šrouby neobsahují a místo nich mají senzor na detekci vzálenosti od podložky, ze kterého si vytvoří síť. Vzdálenost poté kompenzuje firmware tiskárny krokovým motorem osy Z.<br />
+		<br />
+		<b>USB a SD porty</b><br />SD port slouží pro čtení gcode souborů s instrukcemi pro tisk. Také se využívá k nahrání firmwaru do tiskárny. USB port umožňuje tiskárnu připojit a ovládat jí přes software na PC. Je také možné ji přes USB připojit k tiskovému serveru běžícím například na Raspberry Pi. Vybavenost portu záleží na dané tiskárně. Některé umožní tisk i z USB flash disků, jiné zase připojení do Sítě přes RJ45.<br />
+		<br />
+		<b>Heated bed (Vyhřívaná podložka)</b><br />Bed (podložka) jako samotná slouží jako plocha pro tisk. Často je přidělaná na pojezdech a slouží jako osa Y. Vyhřívání podložky je již součástí každé tiskárny. Využívá se ke zlepšení přilnavosti filamentu. Rozsah se pohybuje od nuly až po sto stupňů celsia. Teplota se odvíjí v závislosti na použítém polymeru.
+		<br />
+		<br />
+		<b>LCD controller (Ovládácí panel)</b><br />Jedná se o rozhraní mezi člověkem a tiskárnou. Display zobrazuje informace o tisku, teploty a další důležité hodnoty. Obsahuje také interaktivní menu, přes které se dá nastavit například předehřev a kalibrace podložky. V neposlední řadě také slouží ke spuštění samotného tisku.<br />
+		<br />
+		<b>Stepper motors (Krokové motory)</b><br />Zajišťují celkový pohyb celé tiskárny. Jsou dvoufázové a k jejich pohonu se používá střídavý proud. Motory jsou ovládané takzvanými stepper drivery, které zpracovávají výstupy z řídící desky.<br />
+		<br />
+		<hr />
+		<font size="5" align="left"><b>SLA tiskárny</b></font>
+		<p>&nbsp&nbsp&nbsp&nbspKoncept těchto tiskáren spočívá ve vytvrzování fotopolymeru (resinu). Nejčastěji se jedná o princip tvrdnutí pryskyřice pod ultrafialovým světlem. Tiskárna se hýbe pouze v jediné ose Z. Jednotlivé vrstvy jsou promítany na sebe UV LCD displayem. Díky tomuto principu jsou tiskárny schopné tisknout celou svou plochu za skoro stejný čas, za který by trvalo vytisknout pouze malou část pro nějaký model. Výhodou této technologie je vysoká kvalita výtisku při porovnání s FFF. Výtisk má nerozeznatelné jednotlivé vrstvy a umožňuje tedy tvorbu velice přesných modelů. Je proto populární u tvůrců postaviček nebo v technickém uplatnění pro menší součástky. Cenou za touto kvalitu je třeba opracování modelu po tisku. Po dokončeném tisku je třeba výtisk umýt v isopropylalkoholu a následně jej nechat dotvrdnout v UV stanici. SLA tiskárny také neumožňují moc velké výtisky. Velikost tiskové plochy se pohybuje okolo 140mm.
+		</p>
+		<hr />
+		<font size="5" align="left"><b>Popis SLA tiskárny</b></font>
+		<center>
+		<img src="../images/popissla.png" alt="popisSLAtiskarny" width="400px" />
+		</center>
+		<b>Vat (Káď)</b><br />Do této nádoby se nalívá resin, který je následně utvrzován.<br />
+		<br />
+		<b>LCD (Display z tekutých krystalů)</b><br />LCD display slouží k "tvarování" vrstvy a určuje, přes která místa bude UV světlo prosvítat.<br />
+		<br />
+		<b>LED (Světlo vyzařující dioda)</b><br />Jedná se o zářič ultrafialového světla, které prosvítá přes LCD a vytvrzuje rezin v kádi.<br />
+		<br />
+		<b>Build plate (Tiskový plát)</b><br />Používá se stejně jako tisková podložka u FFF tiskárny. Na tuto podložku je nanášen resin. Tato podložka se poté pohybuje po jediné pohyblivé ose Z.
+		<br />
+		Tato tiskárna také obsahuje řídící jednotku, zdroj napájení a další komponenty nezbytné pro chod tiskárny. Rozdíl je právě v principu nanášení vrstev na sebe a typu materiálu.
+
+
+
+
+
+
+		</font>
+	</td>
+	<td width="100px">
+	</td>
+</tr>
+</table>
+
+<!-- footer -->
+<br />
+<center>	
+<img src="../images/footer.png" alt="footer" width="800px" usemap="#footer">
+
+<map name="footer">
+    <area target="body" alt="kontakt" title="kontakt" href="../html/kontakt.html" coords="367,7,433,25" shape="rect">
+    <area target="_blank" alt="odkazweb" title="odkazweb" href="https://www.3dtisk101.github.io" coords="354,53,504,75" shape="rect">
+	<area target="body" alt="btp" title="backtotop" href="#top" coords="670,56,774,74" shape="rect">
+</map>
+</center>
+<!-- konec fotteru -->
+</body>
+</html>
